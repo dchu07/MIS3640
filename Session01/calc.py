@@ -1,3 +1,5 @@
+#Session01 Exercise02
+print('Session01 Exercise02:')
 #Q1
 a = 42*60+42
 print(a)
