@@ -1,9 +1,9 @@
 #Session02 Exercise01
 print('Session02 Exercise01:')
 #Q1
-pi = 3.14
+import math
 r = 5 
-v = 4/3*pi*(r**3)
+v = 4/3*math.pi*(r**3)
 print('The volume of sphere with a radius of 5 is {:0.2f}'.format(v))
 #Q2
 p = 24.95 #pirce per book
