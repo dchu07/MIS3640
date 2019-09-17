@@ -1,5 +1,5 @@
-#Session02 Exercise01
-print('Session02 Exercise01:')
+#Session03 Exercise01
+print('Session03 Exercise01:')
 
 # 1.1
 a = 3
