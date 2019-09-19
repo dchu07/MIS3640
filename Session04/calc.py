@@ -11,4 +11,4 @@ def quadratic(a,b,c):
     except TypeError:
         print("Oops something is wrong")
 
-quadratic(1,-5,"b")
+quadratic(1,5, 10)
