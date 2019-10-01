@@ -96,11 +96,14 @@ If n is 5, expected output is:
 
 
 def print_numbers(n):
-    for i in range(0,n):
-        for j in range (0, i+1):
-            print(n, end=" ")
-        n -= 1
-        print("\r")
+    for i in range(n+1):
+        print((str(n-i)+ " ")*(i+1))
+        
+    #iteration = 1
+    #while n > 0:
+        #print((str(n)+ " ")*iteration)
+        #iteration += 1
+        #n -= 1
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
