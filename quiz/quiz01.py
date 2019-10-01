@@ -64,13 +64,14 @@ print(is_special(2000))
 Question 3:
 Write a function with loops that computes the average of all cubes of all the odd numbers between 1 and n (inclusive).
 """
-sum = 0
+
 def calculate_avg(n):
     result = 0
-    for i in range(1, n , 2):
+    count = 0
+    for i in range(1, n+1 , 2):
+        count += 1
         result += i*i*i
-    return result/(n/2)
-
+    return (result/count)
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
@@ -96,7 +97,7 @@ If n is 5, expected output is:
 
 def print_numbers(n):
     for i in range(0,n):
-        for j in range (0, i +1):
+        for j in range (0, i+1):
             print(n, end=" ")
         n -= 1
         print("\r")
