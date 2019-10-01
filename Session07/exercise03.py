@@ -11,7 +11,6 @@ def mysqrt(a):
 
 print(mysqrt(2))
 
-
 def test_square_root(a):
     print(a)
     print(mysqrt(a))
