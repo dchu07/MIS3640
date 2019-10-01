@@ -36,11 +36,11 @@ the only exception is when n is divisible by 400(for example, 2000), return True
 """
 
 def is_special(n):
-    if n % 4 == 0:
+    if n % 400 == 0:
         return True
     elif n % 100 == 0:
         return False
-    elif n % 400 == 0:
+    elif n % 4 == 0:
         return True
     else:
         return False
@@ -64,21 +64,21 @@ print(is_special(2000))
 Question 3:
 Write a function with loops that computes the average of all cubes of all the odd numbers between 1 and n (inclusive).
 """
-# import statistics
-# def calculate_avg(n):
-#     result = 0
-#     for i in range(1, n ,2):
-#         result += i^3
-#         statistics.mean(result)
+sum = 0
+def calculate_avg(n):
+    result = 0
+    for i in range(1, n , 2):
+        result += i*i*i
+    return result/(n/2)
 
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
 
-# print(calculate_avg(1))
-# # expect: 1
-# print(calculate_avg(10))
-# # expect: 245
+print(calculate_avg(1))
+# expect: 1
+print(calculate_avg(10))
+# expect: 245
 
 
 """
@@ -95,11 +95,11 @@ If n is 5, expected output is:
 
 
 def print_numbers(n):
-    while n > 0:
-        print(n)
+    for i in range(0,n):
+        for j in range (0, i +1):
+            print(n, end=" ")
         n -= 1
-    
-
+        print("\r")
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
