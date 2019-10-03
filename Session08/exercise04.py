@@ -1,20 +1,23 @@
 #Question 1
-def cost(item):
+Total = 0
+words = ["bananas", "rice", "paprika", "potato chips"]
+
+def cost(item): 
     price = 0
-    for i in range(len(item)):
-        p = int(ord(item[i]))-96
-        price += p
-    print(item, "$" + str(price))
+    for i in item:
+        price += int(ord(i))-96
+    return price
 
-def total(groceries):
-    all = 0
-    for i in range(len(groceries)):
-        all += groceries[1]
-        print(all)
-
-cost("bananas")
-cost("rice")
-cost("paprika")
-cost("potato chips")
-print("------------------------")
-total("bananas")
+def total_price(words):
+    total = 0 
+    longest = 0
+    for item in words:
+        if len(item) > longest:
+            longest = len(item)
+    longest += 10
+    for item in words:
+        print('%-*s $%s' % (longest, item, (cost(item))))
+        total += cost(item)
+    print('-'*(longest*2))
+    print('%-*s $%s' % (longest, 'Total ',(total)))
+total_price(words)
