@@ -14,7 +14,7 @@ def find_three_consecutive_double_words():
         if three_consecutive_double_words(word):
             print(word)
             count += 1
-    print(f"There are {count} words with three consecutive double words")
+    return count
 
 print(find_three_consecutive_double_words())
 
