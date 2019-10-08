@@ -175,15 +175,11 @@ def is_abecedarian_using_recursion(word):
     returns True if the letters in a word appear in alphabetical order
     (double letters are ok).
     """
-    before = word[0]
-    for letter in word:
-        if letter > before:
-            before = letter
-        elif letter == before:
-            before = letter
-        else:
-            return False
-    return True
+    if len(word) <= 1:
+        return True
+    if word[0] > word[1]:
+        return False
+    return is_abecedarian_using_recursion(word[1:])
 
 # print(is_abecedarian_using_recursion('abs'))
 # print(is_abecedarian_using_recursion('apps'))
