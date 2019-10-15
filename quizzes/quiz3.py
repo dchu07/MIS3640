@@ -52,17 +52,14 @@ def cold_call():
     Return a dictionary of name: positive integer pairs
     """
     word = dict()
-    name = NAMES_STRING.split(",")
-    trial = 0
-    while trial < 59:
-        for i in name:
-            word[i] = word.get(random.choice(name), 0) + 1
-            trial += 1
+    name = NAMES_STRING.split(", ")
+    for _ in range(100):
+        name_called = random.choice(name)
+        word[name_called] = word.get(name_called, 0) + 1
     return word
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
-
 
 # print(cold_call())
 ## Expected output:
@@ -83,10 +80,8 @@ def print_hist(data):
     to the positive integer. The rows should be printed in key order.
     No return is required.
     """
-    name = dict()
-    for i in data:
-        name[i] = name.get(i, 0) + 1
-    return name
+    for name, number in data.items():
+        print(f"{name}: "+"*"*number)
 
 # When you've completed your function, uncomment the
 # following lines and run this file to test!
@@ -132,7 +127,18 @@ def get_current_temp():
     """
     Return current temperature in Fahrenheit from api.openweathermap.org
     """
-    pass
+    import urllib.request
+    import json
+
+    APIKEY = 'YOUR_OWN_APIKEY'
+    city = 'Wellesley'
+    country_code = 'us'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city},{country_code}&APPID={APIKEY}'
+
+    f = urllib.request.urlopen(url)
+    response_text = f.read().decode('utf-8')
+    response_data = json.loads(response_text)
+    print(response_data)
 
 
 # When you've completed your function, uncomment the
