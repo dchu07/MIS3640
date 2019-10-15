@@ -184,3 +184,5 @@ def has_duplicates_dict(list):
         if dictionary[value] > 1:
             return True
     return False
+
+#testing code
