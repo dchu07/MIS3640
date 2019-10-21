@@ -4,20 +4,15 @@ import string
 
 def process_file(filename, skip_header):
     """Makes a histogram that contains the words from a file.
-
     filename: string
     skip_header: boolean, whether to skip the Gutenberg header
-
     returns: map from each word to the number of times it appears.
     """
     hist = {}
     fp = open(filename, encoding='UTF8')
-
     if skip_header:
         skip_gutenberg_header(fp)
-
     strippables = string.punctuation + string.whitespace
-
     for line in fp:
         if line.startswith('*** END OF THIS PROJECT'):
             break
@@ -28,7 +23,6 @@ def process_file(filename, skip_header):
 
 def skip_gutenberg_header(fp):
     """Reads from fp until it finds the line that ends the header.
-
     fp: open file object
     """
     for line in fp:
@@ -48,9 +42,7 @@ def different_words(hist):
 
 def most_common(hist):
     """Makes a list of word-freq pairs in descending order of frequency.
-
     hist: map from word to frequency
-
     returns: list of (frequency, word) pairs
     """
     pass
@@ -58,7 +50,6 @@ def most_common(hist):
 
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
-
     hist: histogram (map from word to frequency)
     num: number of words to print
     """
@@ -67,7 +58,6 @@ def print_most_common(hist, num=10):
 
 def subtract(d1, d2):
     """Returns a dictionary with all keys that appear in d1 but not d2.
-
     d1, d2: dictionaries
     """
     pass
@@ -75,7 +65,6 @@ def subtract(d1, d2):
 
 def random_word(hist):
     """Chooses a random word from a histogram.
-
     The probability of each word is proportional to its frequency.
     """
     pass
