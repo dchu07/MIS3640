@@ -78,7 +78,8 @@ def print_anagram_this_way(word_dict):
     words_dict is a dictionary with integer (key): list of word lists (value) pairs
     print the list of word lists in descending order of integers
     """
-    for num in sorted(word_dict.keys(), reverse = True):
+    for num in sorted(word_dict.keys(), reverse = True)[:2]:
+        print(num)
         print(word_dict[num])
 
 def main():
